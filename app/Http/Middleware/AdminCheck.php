@@ -17,8 +17,10 @@ class AdminCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->role == 1) {
-             return $next($request);
+        $roles = json_decode(Auth::user()->roles);
+
+        if(Auth::user() && in_array('Discord Server Management', $roles)) {
+            return $next($request);
         }
 
         return redirect(route('homepage'))->with('error', 'You have not admin access');
