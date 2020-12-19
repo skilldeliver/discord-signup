@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\DB;
+use View;
 
 class PagesController extends Controller
 {
@@ -15,23 +13,23 @@ class PagesController extends Controller
         $data = [
             'metaTitle' => 'Начално',
             'pageName' => 'homepage',
-            'templateName' => 'homepage'
+            'templateName' => 'homepage',
         ];
 
         $result = $request->filled('result');
 
         $isAdmin = '';
 
-        if(!is_null(Auth::user())){
+        if (!is_null(Auth::user())) {
             $userRoles = json_decode(Auth::user()->roles);
 
             $allowedRoles = [
                 'Discord Server Management',
                 'Administrator',
-                'Leads'
+                'Leads',
             ];
 
-            if(count(array_intersect($allowedRoles, $userRoles)) > 0) {
+            if (count(array_intersect($allowedRoles, $userRoles)) > 0) {
                 $isAdmin = true;
             }
         }

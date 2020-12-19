@@ -52,8 +52,8 @@ trait Searchable
     {
         if (isset($this->searchableFields) && count($this->searchableFields)) {
             return $this->searchableFields[0] === '*'
-                ? $this->getAllModelTableFields()
-                : $this->searchableFields;
+            ? $this->getAllModelTableFields()
+            : $this->searchableFields;
         }
 
         return $this->getAllModelTableFields();

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\User;
 use Auth;
+use Illuminate\Http\Request;
 use Socialite;
 
-class DiscordController extends Controller {
+class DiscordController extends Controller
+{
     /**
      * The redirect URL.
      *
@@ -54,7 +55,8 @@ class DiscordController extends Controller {
      */
     protected function findOrNewUser($request, $info)
     {
-        function shortAvatarURL($avatarUrl){
+        function shortAvatarURL($avatarUrl)
+        {
             // https://cdn.discordapp.com/avatars/108595302537146368/6216cc9a13c7e1157cd1a17627523c5b.jpg
 
             preg_match_all('/avatars\/(.*?)\/(.*?).jpg/', $avatarUrl, $avatarToken);
@@ -68,7 +70,7 @@ class DiscordController extends Controller {
             $user->update([
                 'discord_avatar' => shortAvatarURL($info->avatar),
                 'discord_username' => $info->nickname,
-                'email' => $info->email
+                'email' => $info->email,
             ]);
 
             return $user;
@@ -80,7 +82,7 @@ class DiscordController extends Controller {
             'discord_avatar' => shortAvatarURL($info->avatar),
             'server_nickname' => $info->name,
             'email' => $info->email,
-            'roles' => '[]'
+            'roles' => '[]',
         ]);
     }
 

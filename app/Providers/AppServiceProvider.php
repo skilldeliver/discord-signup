@@ -2,10 +2,7 @@
 
 namespace App\Providers;
 
-use DB;
 use Auth;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -51,6 +48,6 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function ($view) {
             $view->with('user', Auth::user());
-        });  
+        });
     }
 }
