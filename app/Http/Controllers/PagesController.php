@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use View;
-use App\Http\Requests\ContactRequest;
-use App\Mail\ContactMade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
@@ -21,13 +20,22 @@ class PagesController extends Controller
 
         $result = $request->filled('result');
 
-        return View::make($data['templateName'], compact('data', 'result'));
-    }
+        $isAdmin = '';
 
-    public function saveEmail(SaveRequest $request)
-    {
-        Mail::to(env('MAIL_TO'))->queue(new SaveMade($request->all()));
+        if(!is_null(Auth::user())){
+            $userRoles = json_decode(Auth::user()->roles);
 
-        return redirect(route('homepage', ['result' => 'success']));
+            $allowedRoles = [
+                'Discord Server Management',
+                'Administrator',
+                'Leads'
+            ];
+
+            if(count(array_intersect($allowedRoles, $userRoles)) > 0) {
+                $isAdmin = true;
+            }
+        }
+
+        return View::make($data['templateName'], compact('data', 'result', 'isAdmin'));
     }
 }

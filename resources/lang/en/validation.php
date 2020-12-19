@@ -146,29 +146,8 @@ return [
     |
     */
 
-    'attributes' => [
-        'contact_name'                      => 'Name',
-        'contact_email'                     => 'Email',
-        'contact_about'                     => 'About',
-        'contact_text'                      => 'Text',
-        'contact_phone'                     => 'Phone',
-        'contact_website'                   => 'Website',
-        "recaptcha_response_field"          => "reCAPTCHA",
-    ],
+    'attributes' => [],
 
-    'js' => [
-        'name.required'         => 'Please enter a name.',
-        'email.required'        => 'Please enter an e-mail.',
-        'email.email'           => 'Please enter a valid e-mail.',
-        'about.required'        => 'Please enter a subject.',
-        'text.required'         => 'Please enter a text.',
-        'phone.required'        => 'Please enter a phone.',
-        'phone.number'          => 'Only numbers allowed.',
-        'website.required'      => 'Please enter a website.',
-        'domain.required'       => 'Please enter a domain name.',
-        'domain.validurl'       => 'Please enter a valid domain name.',
-        'domain.validsld'       => 'Domain name should be 3 or more characters.',
-        'option.required'       => 'Please select an option.',
-    ],
+    'js' => [],
 
 ];

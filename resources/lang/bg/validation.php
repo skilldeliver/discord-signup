@@ -150,29 +150,8 @@ return [
     |
     */
 
-    'attributes' => [
-        'contact_name'              => 'за име',
-        'contact_email'             => 'за имейл адрес',
-        'contact_about'             => 'за относно',
-        'contact_text'              => 'за текст',
-        'contact_phone'             => 'за телефон',
-        'contact_website'           => 'за уебсайт',
-        "recaptcha_response_field"  => "Рекапча",
-    ],
+    'attributes' => [],
 
-    'js' => [
-        'name.required'         => 'Моля, въведете име.',
-        'email.required'        => 'Моля, въведете имейл адрес.',
-        'email.email'           => 'Моля, въведете валиден имейл адрес.',
-        'about.required'        => 'Моля, въведете текст в полето.',
-        'text.required'         => 'Моля, напишете текст.',
-        'phone.required'        => 'Моля, въведете телефон.',
-        'phone.number'          => 'Позволени са само числа.',
-        'website.required'      => 'Моля, въведете уебсайт.',
-        'domain.required'       => 'Моля, въведете домейн.',
-        'domain.validurl'       => 'Моля, въведете валиден домейн.',
-        'domain.validsld'       => 'Домейнът трябва да бъде поне 3 символа.',
-        'option.required'       => 'Моля, изберете опция.',
-    ],
+    'js' => [],
 
 ];

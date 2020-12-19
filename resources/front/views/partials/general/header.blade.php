@@ -19,7 +19,7 @@
                             </a>
                         </li>
                     @else
-                        @if (in_array('Discord Server Management', json_decode($user->roles)))
+                        @if ($isAdmin)
                             <li class="button color-blue">
                                 <a href="{{ route('admin.dashboard') }}" title="Панел">
                                     <i class="icon-panel"></i>
