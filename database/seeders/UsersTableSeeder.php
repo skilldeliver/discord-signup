@@ -18,12 +18,11 @@ class UsersTableSeeder extends Seeder
         $users = file_get_contents(base_path() . "/resources/jsons/users.json");
         $data = json_decode($users, true);
 
-        foreach ($data['members'] as $user) {
+        foreach ($data['users'] as $user) {
             DB::table('users')->insert([
-                'discord_id' => $user['id'],
-                'discord_username' => $user['username'],
-                'server_nickname' => $user['nickname'],
-                'roles' => json_encode($user['roles'], true),
+                'discord_id' => $user['discord_id'],
+                'discord_username' => $user['discord_username'],
+                'server_nickname' => $user['server_nickname'],
                 'created_at' => now(),
                 'updated_at' => now()
             ]);

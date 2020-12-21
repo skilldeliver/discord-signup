@@ -10,7 +10,7 @@
         <p>
             Освен това Вашите мейли ще бъдат използвани и за по-лесното организиране на екипни срещи. Част от програмистите в сървъра ни вече работят върху Discord бот, чрез който лесно да се създават срещи, които ще бъдат добавяни в Google Calendar група, към която Вашият мейл ще присъства, така че винаги да знаете кога какви срещи е имало или предстои да има, както и да получавате известия за наближаващи такива, които се отнасят за Вас, ако разбира се, желаете.
         </p>
-        @if (!is_null($user))
+        @if (Auth::check())
             <h1>Информацията за Вас в нашата база данни:</h1>
             <div class="data">
                 <div class="rows">
@@ -50,11 +50,11 @@
                         Вашите роли в Discord сървъра ни:
                     </div>
                     <div class="row">
-                        @if (!is_null($user->roles) && $user->roles != '[]')
+                        @if ($user->roles->isNotEmpty())
                             <ul>
-                                @foreach (json_decode($user->roles) as $role)
+                                @foreach ($user->roles as $role)
                                     <li>
-                                        {{ $role }}
+                                        <span style="color: {{ $role->hexColor }}">{{ $role->name }}</span>
                                     </li>
                                 @endforeach
                             </ul>

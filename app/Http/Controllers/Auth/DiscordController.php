@@ -69,8 +69,7 @@ class DiscordController extends Controller
         if (!is_null($user)) {
             $user->update([
                 'discord_avatar' => shortAvatarURL($info->avatar),
-                'discord_username' => $info->nickname,
-                'email' => $info->email,
+                'discord_username' => $info->nickname
             ]);
 
             return $user;
@@ -82,7 +81,6 @@ class DiscordController extends Controller
             'discord_avatar' => shortAvatarURL($info->avatar),
             'server_nickname' => $info->name,
             'email' => $info->email,
-            'roles' => '[]',
         ]);
     }
 

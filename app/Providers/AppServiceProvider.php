@@ -47,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
         view()->addLocation($path);
 
         view()->composer('*', function ($view) {
-            $view->with('user', Auth::user());
+            $view->with('user', Auth::user() ? Auth::user()->load('roles') : null);
         });
     }
 }

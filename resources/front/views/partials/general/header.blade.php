@@ -11,15 +11,15 @@
                     </li>
                 </ul>
                 --}}
-                <ul class="user @if (!is_null($user)) logged @endif">
-                    @if (is_null($user))
+                <ul class="user @if (Auth::check()) logged @endif">
+                    @if (Auth::guest())
                         <li class="button text color-green">
                             <a href="{{ route('auth.discord') }}">
                                 <span><i class="icon-discord"></i> Вписване с Discord</span>
                             </a>
                         </li>
                     @else
-                        @if ($isAdmin)
+                        @if (Auth::user()->isAdmin)
                             <li class="button color-blue">
                                 <a href="{{ route('admin.dashboard') }}" title="Панел">
                                     <i class="icon-panel"></i>

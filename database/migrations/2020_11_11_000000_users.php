@@ -21,7 +21,6 @@ class Users extends Migration
             $table->string('discord_avatar')->nullable();
             $table->string('server_nickname')->nullable();
             $table->string('email')->nullable();
-            $table->json('roles')->nullable();
             $table->timestamps();
         });
     }

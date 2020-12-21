@@ -19,7 +19,6 @@ class User extends Authenticatable
         'discord_avatar',
         'server_nickname',
         'email',
-        'roles',
     ];
 
     protected $searchableFields = ['*'];
@@ -28,8 +27,20 @@ class User extends Authenticatable
 
     protected $casts = [];
 
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
     public function getAvatarUrlAttribute()
     {
         return 'https://cdn.discordapp.com/avatars/' . $this->discord_id . '/' . $this->discord_avatar . '.jpg';
+    }
+
+    public function getIsAdminAttribute()
+    {
+        $result = $this->roles()->where('panel_access', '>', 0)->exists();
+
+        return $result;
     }
 }
