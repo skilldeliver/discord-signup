@@ -11,6 +11,8 @@ class Role extends Model
 
     protected $primaryKey = 'discord_role_id';
 
+    public $incrementing = false;
+
     protected $fillable = [
         'discord_role_id',
         'name',

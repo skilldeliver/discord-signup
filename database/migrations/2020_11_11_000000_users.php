@@ -14,12 +14,14 @@ class Users extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('discord_user_id');
+            $table->bigInteger('discord_user_id')->unsigned();
             $table->string('remember_token', 100)->nullable();
             $table->string('discord_username');
-            $table->string('discord_avatar_hash')->nullable();
+            $table->string('discord_avatar_hash', 32)->nullable();
             $table->string('server_nickname')->nullable();
             $table->string('email')->nullable();
+
+            $table->primary('discord_user_id');
 
             $table->timestamps();
         });
