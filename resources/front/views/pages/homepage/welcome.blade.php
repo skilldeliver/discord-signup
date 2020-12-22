@@ -15,7 +15,7 @@
             <div class="data">
                 <div class="rows">
                     <div class="row">
-                        Вашият Discord идентификационен номер:
+                        Идентификационен номер в Discord:
                     </div>
                     <div class="row">
                         {{ $user->discord_id }}
@@ -23,7 +23,7 @@
                 </div>
                 <div class="rows">
                     <div class="row">
-                        Вашият Discord акаунт:
+                        Потребителско име в Discord:
                     </div>
                     <div class="row">
                         {{ $user->discord_username }}
@@ -31,7 +31,17 @@
                 </div>
                 <div class="rows">
                     <div class="row">
-                        Вашият имейл, който използвате за Discord акаунта си:
+                        Аватар в Discord:
+                    </div>
+                    <div class="row">
+                        <a href="{{ $user->avatarHash }}" target="_blank" rel="noopener">
+                            кликнете тук
+                        </a>
+                    </div>
+                </div>
+                <div class="rows">
+                    <div class="row">
+                        Имейл:
                     </div>
                     <div class="row">
                         {{ $user->email }}
@@ -39,7 +49,7 @@
                 </div>
                 <div class="rows">
                     <div class="row">
-                        Вашият псевдоним в Discord сървъра ни:
+                        Псевдоним в нашия Discord сървър:
                     </div>
                     <div class="row">
                         {{ $user->server_nickname }}
@@ -47,7 +57,7 @@
                 </div>
                 <div class="rows">
                     <div class="row">
-                        Вашите роли в Discord сървъра ни:
+                        Роли в нашия Discord сървър:
                     </div>
                     <div class="row">
                         @if ($user->roles->isNotEmpty())

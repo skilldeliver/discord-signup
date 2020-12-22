@@ -5,7 +5,6 @@ window.validator = validator;
 
 // Globals
 
-import '../elements/_partials/navigation.js';
 import '../elements/_partials/cookie-consent.js';
 
 // Page specified scripts

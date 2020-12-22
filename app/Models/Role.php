@@ -10,14 +10,11 @@ class Role extends Model
     use HasFactory;
 
     protected $fillable = [
-        'role_id',
+        'discord_role_id',
         'name',
         'color',
+        'panel_access',
     ];
-
-    protected $hidden = [];
-
-    protected $casts = [];
 
     public function getHexColorAttribute()
     {

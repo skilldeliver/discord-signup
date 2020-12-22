@@ -55,20 +55,17 @@ class DiscordController extends Controller
      */
     protected function findOrNewUser($request, $info)
     {
-        function shortAvatarURL($avatarUrl)
-        {
-            // https://cdn.discordapp.com/avatars/108595302537146368/6216cc9a13c7e1157cd1a17627523c5b.jpg
-
-            preg_match_all('/avatars\/(.*?)\/(.*?).jpg/', $avatarUrl, $avatarToken);
-
-            return $avatarToken[2][0];
-        }
-
         $user = User::where('discord_id', $info->id)->first();
+
+        // Avatar URL: https://cdn.discordapp.com/avatars/108595302537146368/6216cc9a13c7e1157cd1a17627523c5b.jpg
+
+        preg_match_all('/avatars\/(.*?)\/(.*?).jpg/', $info->avatar, $userAvatar);
+
+        $info->avatarHash = $userAvatar[2][0];
 
         if (!is_null($user)) {
             $user->update([
-                'discord_avatar' => shortAvatarURL($info->avatar),
+                'discord_avatar_hash' => $info->avatarHash,
                 'discord_username' => $info->nickname
             ]);
 
@@ -86,7 +83,7 @@ class DiscordController extends Controller
         return User::create([
             'discord_id' => $info->id,
             'discord_username' => $info->nickname,
-            'discord_avatar' => shortAvatarURL($info->avatar),
+            'discord_avatar_hash' => $info->avatarHash,
             'server_nickname' => $info->name,
             'email' => $info->email,
         ]);

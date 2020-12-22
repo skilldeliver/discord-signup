@@ -2,15 +2,6 @@
     <div class="container">
         <div class="wrapper">
             <nav class="navigation">
-                {{--
-                <ul class="menu {{ $data['pageName'] }}">
-                    <li class="link active">
-                        <a href="{{ route('homepage') }}">
-                            Начало
-                        </a>
-                    </li>
-                </ul>
-                --}}
                 <ul class="user @if (Auth::check()) logged @endif">
                     @if (Auth::guest())
                         <li class="button text color-green">

@@ -10,8 +10,6 @@
 
         <link rel="canonical" href="{{ strtolower(Request::url()) }}" />
 
-        {{--@include('partials.favicon')--}}
-
         <link rel="preload stylesheet" href="{{ asset(mix('front/css/' . ($data['templateName'] ?? 'missing') . '.css')) }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="{{ asset(mix('front/css/' . ($data['templateName'] ?? 'missing') . '.css')) }}"></noscript>
 
