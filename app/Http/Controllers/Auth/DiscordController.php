@@ -55,7 +55,7 @@ class DiscordController extends Controller
      */
     protected function findOrNewUser($request, $info)
     {
-        $user = User::where('discord_id', $info->id)->first();
+        $user = User::where('discord_user_id', $info->id)->first();
 
         // Avatar URL: https://cdn.discordapp.com/avatars/108595302537146368/6216cc9a13c7e1157cd1a17627523c5b.jpg
 
@@ -81,7 +81,7 @@ class DiscordController extends Controller
         }
 
         return User::create([
-            'discord_id' => $info->id,
+            'discord_user_id' => $info->id,
             'discord_username' => $info->nickname,
             'discord_avatar_hash' => $info->avatarHash,
             'server_nickname' => $info->name,

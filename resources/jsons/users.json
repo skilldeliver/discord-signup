@@ -1,11 +1,11 @@
 {
     "users": [{
-        "discord_id": 108595302537146368,
+        "discord_user_id": 108595302537146368,
         "discord_username": "Xen#0674",
         "server_nickname": "Tom Atanasov (Xen)"
     },
 	{
-        "discord_id": 365859941292048384,
+        "discord_user_id": 365859941292048384,
         "discord_username": "Skilldeliver#8954",
         "server_nickname": "Skilldeliver (Vladislav)"
     }]

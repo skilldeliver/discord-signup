@@ -2,22 +2,22 @@
     "roles": [{
             "discord_role_id": 1234567890,
             "name": "Discord Server Management",
-            "color": "3447003"
+            "color": 3447003
         },
         {
             "discord_role_id": 1234567891,
             "name": "Administrator",
-            "color": "3447003"
+            "color": 3447003
         },
         {
             "discord_role_id": 1234567892,
             "name": "Leads",
-            "color": "9807270"
+            "color": 9807270
         },
         {
             "discord_role_id": 1234567893,
             "name": "Back-End Developer",
-            "color": "3066993"
+            "color": 3066993
         }
     ]
 }

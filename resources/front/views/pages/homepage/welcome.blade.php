@@ -18,7 +18,7 @@
                         Идентификационен номер в Discord:
                     </div>
                     <div class="row">
-                        {{ $user->discord_id }}
+                        {{ $user->discord_user_id }}
                     </div>
                 </div>
                 <div class="rows">

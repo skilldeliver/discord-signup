@@ -23,7 +23,7 @@ class RolesTableSeeder extends Seeder
                 'discord_role_id' => $role['discord_role_id'],
                 'name' => $role['name'],
                 'color' => $role['color'],
-                'panel_access' => ($key < 1), // the first role always has access to the admin panel
+                'has_panel_access' => ($key < 1), // the first role always has access to the admin panel
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

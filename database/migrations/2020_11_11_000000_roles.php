@@ -14,11 +14,11 @@ class Roles extends Migration
     public function up()
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('discord_role_id')->unsigned();
+            $table->bigIncrements('discord_role_id');
             $table->string('name');
             $table->mediumInteger('color')->unsigned();
-            $table->boolean('panel_access');
+            $table->boolean('has_panel_access');
+
             $table->timestamps();
         });
     }

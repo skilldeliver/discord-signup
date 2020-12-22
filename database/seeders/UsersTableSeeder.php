@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
 
         foreach ($data['users'] as $user) {
             DB::table('users')->insert([
-                'discord_id' => $user['discord_id'],
+                'discord_user_id' => $user['discord_user_id'],
                 'discord_username' => $user['discord_username'],
                 'server_nickname' => $user['server_nickname'],
                 'created_at' => now(),
