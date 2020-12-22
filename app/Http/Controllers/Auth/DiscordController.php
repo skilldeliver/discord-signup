@@ -41,7 +41,7 @@ class DiscordController extends Controller
 
             Auth::login($user, true);
 
-            return redirect()->route('homepage', ['result' => 'success']);
+            return redirect()->route('homepage');
         } catch (Exception $e) {
             return redirect()->route('auth.discord');
         }
@@ -71,6 +71,14 @@ class DiscordController extends Controller
                 'discord_avatar' => shortAvatarURL($info->avatar),
                 'discord_username' => $info->nickname
             ]);
+
+            if (is_null($user->email)) {
+                $user->update([
+                    'email' => $info->email
+                ]);
+            }
+
+            $user->touch();
 
             return $user;
         }

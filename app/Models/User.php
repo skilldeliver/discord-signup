@@ -27,11 +27,6 @@ class User extends Authenticatable
 
     protected $casts = [];
 
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class);
-    }
-
     public function getAvatarUrlAttribute()
     {
         return 'https://cdn.discordapp.com/avatars/' . $this->discord_id . '/' . $this->discord_avatar . '.jpg';
@@ -42,5 +37,10 @@ class User extends Authenticatable
         $result = $this->roles()->where('panel_access', '>', 0)->exists();
 
         return $result;
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
     }
 }

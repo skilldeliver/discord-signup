@@ -12,7 +12,12 @@
         {
             "discord_role_id": 1234567892,
             "name": "Leads",
-            "color": "3447003"
+            "color": "9807270"
+        },
+        {
+            "discord_role_id": 1234567893,
+            "name": "Back-End Developer",
+            "color": "3066993"
         }
     ]
 }

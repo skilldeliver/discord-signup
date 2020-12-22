@@ -28,11 +28,11 @@ ___
 
 1. Don't forget to set __database__, and __Discord Developer data__ in `.env` file
 1. Generate public and admin panel assets with `npm run dev`
-	1. Or just generate only public or only admin panel assets - `npm run dev-front` (public) and `npm run dev-back` (admin panel)
-	1. Or just watch them - `npm run watch-poll-front` (public) and `npm run watch-poll-back` (admin panel)
+    1. Or just generate only public or only admin panel assets - `npm run dev-front` (public) and `npm run dev-back` (admin panel)
+    1. Or just watch them - `npm run watch-poll-front` (public) and `npm run watch-poll-back` (admin panel)
 1. Run and seed all migrations - `php artisan migrate:fresh --seed`
-	1. Or only run them with `php artisan migrate`
-	1. Or only seed them with `php artisan db:seed` if you already migrated them (won't work if they are not migrated)
+    1. Or only run them with `php artisan migrate`
+    1. Or only seed them with `php artisan db:seed` if you already migrated them (won't work if they are not migrated)
 ___
 
 ### For production environment
@@ -41,6 +41,4 @@ ___
 1. Don't forget to __turn off debug mode__ with `APP_DEBUG=false` in `.env` file
 1. Don't forget to set __database__, and __Discord Developer data__ in `.env` file
 1. Generate public and admin panel assets with `npm run prod`
-1. Run and seed all migrations - `php artisan migrate:fresh --seed`
-	1. Or only run them with `php artisan migrate`
-	1. Or only seed them with `php artisan db:seed` if you already migrated them (won't work if they are not migrated)
+1. Run all migrations - `php artisan migrate:fresh`
