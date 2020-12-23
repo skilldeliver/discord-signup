@@ -15,6 +15,7 @@
         "laravel/framework": "^8.12",
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.5",
+        "laravelcollective/html": "^6.2",
         "socialiteproviders/discord": "^4.1",
         "socialiteproviders/zoho": "^4.1"
     },

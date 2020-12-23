@@ -148,6 +148,9 @@ return [
 
     'attributes' => [],
 
-    'js' => [],
+    'js' => [
+        'email.required'        => 'Please enter an e-mail.',
+        'email.email'           => 'Please enter a valid e-mail.',
+    ],
 
 ];

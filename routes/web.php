@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::get('/', [PagesController::class, 'index'])->name('homepage');
+Route::post('form', [PagesController::class, 'form'])->name('form.submit');
 
 Route::namespace('Auth')->group(function () {
     Route::get('auth/discord', [DiscordController::class, 'redirectToDiscord'])->name('auth.discord');

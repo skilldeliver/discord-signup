@@ -21,6 +21,10 @@
             <link rel="preconnect" href="https://stats.g.doubleclick.net" />
         @endif
 
+        <script>
+            window.validationMessages = {!! json_encode(trans('validation.js')) !!};
+        </script>
+
         @yield('head-scripts')
     </head>
     <body class="page-{{ $data['pageName'] ?? 'missing' }}">

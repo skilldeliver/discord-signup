@@ -2,33 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    transition: all .4s ease-out;
-
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform-origin: right center;
-        transform: scaleX(0);
-        transition: transform .4s ease-out;
-        z-index: 0;
-    }
-
-    &:hover {
-        &:before {
-            transform-origin: left center;
-            transform: scale(1);
-        }
-    }
+    border-radius: 2px;
 
     &.style-1 {
         background-color: $blue;
 
-        &:before {
+        &:hover {
             background-color: darken($blue, 5%);
         }
 
@@ -40,9 +19,7 @@
     span {
         @include font-size(14px);
 
-        font-weight: 700;
         display: block;
-        z-index: 2;
     }
 }
 
