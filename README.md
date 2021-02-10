@@ -20,7 +20,7 @@
     1. Create an Application on Discord's Developer Portal (https://discord.com/developers/applications) and fill your `.env` file with its data.`DISCORD_REDIRECT_URI` example - `http://localhost/discord-signup/public/auth/discord/handle`
 1. `docker-compose --env-file src/.env up -d --build site`
 1. `cd src`
-1. Follow the installation steps in ###Setup using these docker commands:
+1. Follow the installation steps in [Setup](https://github.com/skilldeliver/discord-signup/tree/docker-compose#setup) using these docker commands:
     composer - `docker-compose run --rm composer`
     php aritsan -`docker-compose run --rm artisan`
     npm - `docker-compose run --rm npm`
