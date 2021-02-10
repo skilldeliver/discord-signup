@@ -29,14 +29,14 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: homestead
-      MYSQL_USER: homestead
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
       - laravel
+    volumes:
+      - ./mysql:/var/lib/mysql
 
   php:
     build:
@@ -105,3 +105,6 @@ services:
       - 8025:8025
     networks:
       - laravel
+
+volumes:
+    mysql: {}
